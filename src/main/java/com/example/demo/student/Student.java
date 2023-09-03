@@ -30,6 +30,11 @@ public class Student {
         this.dob = dob;
         this.age = age;
     }
+// BU  SANIRIM VIDEODA YOKTU BEAN EKLEDIGIMHALDE DB YE DE DATA GIDIYO
+// ANCAK HATA GELIYNCA STUDENTE BAKTIM DEFAULT CONSTRUCTOR YOKMUS
+    public Student() {
+
+    }
 
     public Long getId() {
         return id;
