@@ -37,4 +37,16 @@ public class StudentController {
     public void deleteStudent(@PathVariable("studentId") Long id){
         studentService.deleteStudent(id);
     }
+    //Put mapping i giriyoruz ve pathi ekliyoruz
+    // ardından pathvariable olan studentid yi fonksiyona ekliyoruz
+    //bodyde olması gereken verilerin ve required durumlarını ekliyoruz
+    //REQUEST PARAM ile istediğimiz parametreleri ekliyoruz
+    // REQUEST BODY FARKLI BU PARAMETRE OLUR /1/name?ali gibi
+    @PutMapping(path ="{studentId}" )
+    public void updateStudent(@PathVariable("studentId") Long studentId,
+                                @RequestParam(required = false) String name,
+                              @RequestParam(required = false) String email
+                              ){
+        studentService.updateStudent(studentId,name,email);
+    }
 }
