@@ -4,6 +4,8 @@ package com.example.demo.student;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.time.Period;
+
 @Entity
 @Table
 public class Student {
@@ -21,14 +23,18 @@ public class Student {
     private String name;
     private  String email;
     private LocalDate dob;
+    // @Transient means there is no need to add column for this it removes from table
+    // this -age- calculated for us
+    // remove the age from constructors then
+    // add logics to getAge fucntion
+    @Transient
     private Integer age;
 
-    public Student(Long id, String name, String email, LocalDate dob, Integer age) {
+    public Student(Long id, String name, String email, LocalDate dob) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.dob = dob;
-        this.age = age;
     }
 // BU  SANIRIM VIDEODA YOKTU BEAN EKLEDIGIMHALDE DB YE DE DATA GIDIYO
 // ANCAK HATA GELIYNCA STUDENTE BAKTIM DEFAULT CONSTRUCTOR YOKMUS
@@ -69,7 +75,7 @@ public class Student {
     }
 
     public Integer getAge() {
-        return age;
+        return Period.between(this.dob,LocalDate.now()).getYears();
     }
 
     public void setAge(Integer age) {
@@ -87,10 +93,10 @@ public class Student {
                 '}';
     }
 
-    public Student(String name, String email, LocalDate dob, Integer age) {
+    public Student(String name, String email, LocalDate dob) {
         this.name = name;
         this.email = email;
         this.dob = dob;
-        this.age = age;
+
     }
 }
