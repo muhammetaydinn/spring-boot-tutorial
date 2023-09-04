@@ -1,6 +1,5 @@
+https://www.youtube.com/watch?v=9SGDpanrc8U&ab_channel=Amigoscode
 ## Installed PostgreSQL
-
-
 
 ```bash
 
@@ -25,3 +24,16 @@ Hibernate:
     )
    ```
 Burada eklediğimiz anotasyonlar sayessinde databaseimizde tablelarımız olusuyor.
+
+
+CLEAN INSTALL JAR OLUSTU 
+ALTTAKI KOD DA ASLINDA BACKENDI CALISTIYOR APKSINI ALMAK GIBI 
+```bash
+cd target
+java -jar demo-0.0.1-SNAPSHOT.jar
+```
+
+BU SEKİLDE DE FARKLI PORTTA CALISTIRABİLİRSİN
+```bash
+java -jar demo-0.0.1-SNAPSHOT.jar --server.port=8081
+```
