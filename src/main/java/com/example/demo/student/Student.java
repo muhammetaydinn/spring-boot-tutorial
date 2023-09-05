@@ -2,12 +2,14 @@ package com.example.demo.student;
 
 
 import jakarta.persistence.*;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import java.time.LocalDate;
 import java.time.Period;
 
 @Entity
 @Table
+@EnableAutoConfiguration
 public class Student {
     @Id
     @SequenceGenerator(
